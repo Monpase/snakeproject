@@ -25,6 +25,12 @@ namespace Snake_Project
             Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
             int map = int.Parse(Console.ReadLine());
             Console.Clear();
+
+            // Отрисовка змейки	
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Point p = new Point(4, 5, 'o');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
         }
     }
 }
