@@ -74,8 +74,11 @@
             </Button.Background>
 
         </Button>
-        
-        
+        <TextBlock HorizontalAlignment="Left" Margin="22,33,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Choose map" VerticalAlignment="Top" Height="29" Width="155" FontFamily="Showcard Gothic" FontSize="24" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,33,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Choose level" VerticalAlignment="Top" Height="29" Width="173" FontFamily="Showcard Gothic" FontSize="24"/>
+        <TextBlock HorizontalAlignment="Left" Margin="79,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="the Snake game" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="83" Width="596" FontFamily="Showcard Gothic" FontSize="72" Foreground="#FF081568"/>
+
+
     </Grid>
 
 </Window>
