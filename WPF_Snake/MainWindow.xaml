@@ -33,6 +33,26 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <ListBox Grid.Row="2"
+                 Grid.RowSpan="2"
+                 Width="164"
+                 Height="106"
+                 Margin="33,67,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 SelectionChanged="ListBox_SelectionChanged" />
+        <ListBox Grid.Row="2"
+                 Grid.RowSpan="2"
+                 Grid.Column="1"
+                 Width="164"
+                 Height="106"
+                 Margin="22,67,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 SelectionChanged="ListBox_SelectionChanged" />
+
+
+
         <Button x:Name="ButtonPlay"
                 Grid.Row="4"
                 Grid.Column="2"
@@ -54,8 +74,6 @@
             </Button.Background>
 
         </Button>
-
-
     </Grid>
 
 </Window>
