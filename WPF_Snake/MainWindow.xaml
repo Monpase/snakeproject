@@ -1,4 +1,4 @@
-﻿<Window x:Class="Snake_gamee.MainWindow"
+﻿<Window x:Class="WPF_Snake.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow"
@@ -74,6 +74,8 @@
             </Button.Background>
 
         </Button>
+        
+        
     </Grid>
 
 </Window>
