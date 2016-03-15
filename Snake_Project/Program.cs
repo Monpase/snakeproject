@@ -105,5 +105,6 @@ namespace Snake_Project
             Console.SetCursorPosition(xOffset, yOffset);
             Console.WriteLine(text);
         }
+         
     }
 }

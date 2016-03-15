@@ -39,8 +39,11 @@
                  Height="106"
                  Margin="33,67,0,0"
                  HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
-                 SelectionChanged="ListBox_SelectionChanged" />
+                 VerticalAlignment="Top"/>
+        <StackPanel Margin="0" Orientation="Horizontal">
+
+        </StackPanel>
+
         <ListBox Grid.Row="2"
                  Grid.RowSpan="2"
                  Grid.Column="1"
@@ -49,7 +52,7 @@
                  Margin="22,67,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top"
-                 SelectionChanged="ListBox_SelectionChanged" />
+                  />
 
 
 
