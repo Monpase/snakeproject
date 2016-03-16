@@ -113,12 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Snake_Project\Snake_Project.csproj">
-      <Project>{94f28461-dbbe-4df5-bf1b-3d3be645c217}</Project>
-      <Name>Snake_Project</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -11,6 +11,7 @@ namespace WPF_Snake
 {
     class SnakeRepository
     {
+        Record rec = new Record();
         static void WriteText(String text, int xOffset, int yOffset)
         {
             Console.SetCursorPosition(xOffset, yOffset);
@@ -107,6 +108,8 @@ namespace WPF_Snake
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Введите ваше имя:");
             Console.SetCursorPosition(30, 17);
+            rec.Result = score;
+            rec.Name = Console.ReadLine();
             Console.ReadLine();
         }
         static void WriteGameOver()

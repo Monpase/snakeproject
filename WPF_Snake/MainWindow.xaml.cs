@@ -24,7 +24,7 @@ namespace WPF_Snake
     /// </summary>
     public partial class MainWindow : Window
     {
-        int score = 0;
+        
         SnakeRepository sr = new SnakeRepository();
         public MainWindow()
         {
