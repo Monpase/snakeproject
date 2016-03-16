@@ -1,16 +1,30 @@
-﻿using System;
+﻿using Snake_Project;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Snake_Project
+namespace WPF_Snake
 {
-    class Program
+    class SnakeRepository
     {
-        static void Main(string[] args)
+        Record rec = new Record();
+        static void WriteText(String text, int xOffset, int yOffset)
         {
+            Console.SetCursorPosition(xOffset, yOffset);
+
+            Console.WriteLine(text);
+        }
+
+        [DllImport("Kernel32")]
+        public static extern void AllocConsole();
+
+        public void OnClickPlay()
+        {
+            AllocConsole();
             Console.WriteLine("Выберите уровень сложности от 1 до 10:");
             int lvl = int.Parse(Console.ReadLine());
 
@@ -48,16 +62,17 @@ namespace Snake_Project
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
 
-            Point p = new Point(4, 5, 'o');
+            Snake_Project.Point p = new Snake_Project.Point(4, 5, 'o');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
 
             FoodCreator foodCreator = new FoodCreator(60, 25, '*');
 
-            Point food = foodCreator.CreateFood();
+            Snake_Project.Point food = foodCreator.CreateFood();
             food.Draw();
 
+            int score = 0;
 
             while (true)
             {
@@ -67,9 +82,10 @@ namespace Snake_Project
                 }
                 if (snake.Eat(food))
                 {
+
                     food = foodCreator.CreateFood();
                     food.Draw();
-
+                    score++;
 
                 }
                 else
@@ -84,13 +100,22 @@ namespace Snake_Project
                     snake.HandleKey(key.Key);
                 }
             }
+            Console.Clear();
             WriteGameOver();
+            Console.SetCursorPosition(38, 14);
+            Console.WriteLine(score * 10);
+
+            Console.SetCursorPosition(30, 16);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Введите ваше имя:");
+            Console.SetCursorPosition(30, 17);
+            rec.Result = score;
+            rec.Name = Console.ReadLine();
             Console.ReadLine();
         }
-
-
         static void WriteGameOver()
         {
+
             int xOffset = 25;
             int yOffset = 8;
             Console.SetCursorPosition(xOffset, yOffset++);
@@ -98,13 +123,9 @@ namespace Snake_Project
             WriteText("============================", xOffset, yOffset++);
             WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
             WriteText("============================", xOffset, yOffset++);
-        }
+            WriteText("В   А   Ш      С   Ч   Е   Т", xOffset, yOffset++);
 
-        static void WriteText(String text, int xOffset, int yOffset)
-        {
-            Console.SetCursorPosition(xOffset, yOffset);
-            Console.WriteLine(text);
+
         }
-         
     }
 }
