@@ -31,19 +31,18 @@ namespace WPF_Snake
             InitializeComponent();
         }
 
-        
 
 
-       
+
+
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             sr.OnClickPlay();
-            
         }
 
 
-        
+
     }
 }
 

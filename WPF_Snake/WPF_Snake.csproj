@@ -64,8 +64,8 @@
     <Compile Include="GameClasses\Snake.cs" />
     <Compile Include="GameClasses\VerticalLine.cs" />
     <Compile Include="GameClasses\Walls.cs" />
-    <Compile Include="Record.cs" />
-    <Compile Include="RecordContext.cs" />
+    <Compile Include="DBrecords\Record.cs" />
+    <Compile Include="DBrecords\RecordContext.cs" />
     <Compile Include="SnakeRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
