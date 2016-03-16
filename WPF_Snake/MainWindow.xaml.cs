@@ -46,6 +46,11 @@ namespace WPF_Snake
 
         }
 
+        private void ButtonScores_Click(object sender, RoutedEventArgs e)
+        {
+            //some actions
+        }
+
 
 
     }

@@ -88,7 +88,7 @@
         	Margin="36,25,0,0"
         	HorizontalAlignment="Left"
         	VerticalAlignment="Top"
-        	Click="Button_Click"
+        	Click="ButtonScores_Click"
         	Content="High scores"
         	FontFamily="Showcard Gothic"
         	FontSize="20"
