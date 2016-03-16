@@ -28,7 +28,7 @@ namespace WPF_Snake
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Process process = System.Diagnostics.Process.Start(@"Snake.exe");
+            
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
