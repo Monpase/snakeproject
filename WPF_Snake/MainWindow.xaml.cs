@@ -78,7 +78,7 @@ namespace WPF_Snake
                 rooms.Draw();
                 walls.Draw();
             }
-
+            
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
 
