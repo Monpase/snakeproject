@@ -100,6 +100,7 @@ namespace WPF_Snake
                     snake.HandleKey(key.Key);
                 }
             }
+            Console.Clear();
             WriteGameOver();
             Console.SetCursorPosition(38, 14);
             Console.WriteLine(score * 10);
