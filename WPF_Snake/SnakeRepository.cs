@@ -152,18 +152,22 @@ namespace WPF_Snake
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key.ToString() == "UpArrow")
+                    {
+
+                    }
                     snake.HandleKey(key.Key);
                 }
             }
             Console.Clear();
             WriteGameOver();
-            Console.SetCursorPosition(41, 14);
+            Console.SetCursorPosition(38, 13);
             Console.WriteLine(score * 10);
 
-            Console.SetCursorPosition(30, 16);
+            Console.SetCursorPosition(30, 15);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Enter your name:");
-            Console.SetCursorPosition(30, 17);
+            Console.SetCursorPosition(30, 16);
             rec.Result = score;
             rec.Name = Console.ReadLine();
             //Console.Clear();
@@ -175,8 +179,8 @@ namespace WPF_Snake
         static void WriteGameOver()
         {
 
-            int xOffset = 25;
-            int yOffset = 8;
+            int xOffset = 22;
+            int yOffset = 7;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
             WriteText("==================================", xOffset, yOffset++);
