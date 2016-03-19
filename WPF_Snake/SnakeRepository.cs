@@ -122,7 +122,7 @@ namespace WPF_Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(440 / lvl);
+                Thread.Sleep(500 / lvl);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
