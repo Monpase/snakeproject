@@ -12,7 +12,7 @@ namespace WPF_Snake
 {
     class SnakeRepository
     {
-        
+
         Record rec = new Record();
 
         private int _level;
@@ -30,9 +30,9 @@ namespace WPF_Snake
             get { return _mapType; }
             set { _mapType = value; }
         }
-        
-        
-        
+
+
+
         static void WriteText(String text, int xOffset, int yOffset)
         {
             Console.SetCursorPosition(xOffset, yOffset);
@@ -49,7 +49,7 @@ namespace WPF_Snake
         public void OnClickPlay()
         {
             AllocConsole();
-          // Console.WriteLine("Выберите уровень сложности от 1 до 10:");
+            // Console.WriteLine("Выберите уровень сложности от 1 до 10:");
             int lvl = _level;
 
             //while (lvl < 1 || lvl > 10)
@@ -70,7 +70,7 @@ namespace WPF_Snake
             string map = _mapType;
 
 
-            if (map =="Коробочка")
+            if (map == "Коробочка")
             {
                 walls = new Walls(80, 25);
                 walls.Draw();
@@ -83,15 +83,15 @@ namespace WPF_Snake
                 rooms.Draw();
                 walls.Draw();
             }
-            else if(map=="Туннель")
+            else if (map == "Туннель")
             {
                 tunnel = new Tunnel(80, 25);
                 walls = new Walls(80, 25);
                 walls.Draw();
                 tunnel.Draw();
-                
+
             }
-            
+
 
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -101,17 +101,29 @@ namespace WPF_Snake
             snake.Draw();
 
 
-            FoodCreator foodCreator = new FoodCreator(66, 25, '*');
-            
-            Snake_Project.Point food = foodCreator.CreateFood();
-            
-            food.Draw();
+            FoodCreator foodCreator = new FoodCreator(79, 25, '*');
 
+            Snake_Project.Point food = foodCreator.CreateFood();
+
+            if (map == "Комнаты")
+            {
+                if ((food.x > 8 && food.x < 69) && (food.y > 10 && food.y < 20))
+                {
+
+                    food.Draw();
+
+                }
+
+                else
+                {
+                    food.Draw();
+                }
+            }
             int score = 0;
 
             while (true)
             {
-                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake)) 
+                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake))
                 {
                     break;
                 }
@@ -123,6 +135,7 @@ namespace WPF_Snake
                     score++;
 
                 }
+
                 else
                 {
                     snake.Move();
@@ -148,9 +161,9 @@ namespace WPF_Snake
             rec.Name = Console.ReadLine();
             Console.Clear();
             FreeConsole();
-            
-                       
-            
+
+
+
         }
         static void WriteGameOver()
         {
