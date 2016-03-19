@@ -48,9 +48,11 @@ namespace WPF_Snake
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             int lvlGame = 0;
+            string mapGame = "";
             try
             {
                 lvlGame = comboBoxLevel.SelectedIndex;
+                mapGame = listBoxMap.SelectedItem.ToString();
                 Object selectedLvl = comboBoxLevel.SelectedItem;
                 Object selectedMap = listBoxMap.SelectedItem;
                 MessageBox.Show("Уровень сложности: " + selectedLvl.ToString() + "\n" +
@@ -58,12 +60,13 @@ namespace WPF_Snake
             }
             catch(NullReferenceException)
             {
-                MessageBox.Show("Выберите уровень сложности и карту");
+                MessageBox.Show("Выберите уровень сложности и карту!");
             }
-            if (lvlGame > 0 && lvlGame < 11)
+            if (lvlGame > 0 && lvlGame < 11 && (mapGame == "Коробочка" || mapGame == "Комнаты"))
             {
                 sr.OnClickPlay();
             }
+           
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
