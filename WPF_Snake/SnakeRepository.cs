@@ -6,10 +6,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using WPF_Snake.GameClasses;
 
 namespace WPF_Snake
 {
-    class SnakeRepository
+    class SnakeRepository 
     {
         Record rec = new Record();
         static void WriteText(String text, int xOffset, int yOffset)
@@ -40,8 +41,9 @@ namespace WPF_Snake
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
+            Tunnel tunnel = new Tunnel(0, 0);
             Console.Clear();
-            Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
+            Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты, 3-Туннель");
             int map = int.Parse(Console.ReadLine());
 
 
@@ -56,6 +58,13 @@ namespace WPF_Snake
                 walls = new Walls(80, 25);
                 rooms = new Rooms(40, 25);
                 rooms.Draw();
+                walls.Draw();
+            }
+            else if (map ==3)
+            {
+                walls = new Walls(80, 25);
+                tunnel = new Tunnel(80, 25);
+                tunnel.Draw();
                 walls.Draw();
             }
 
@@ -76,7 +85,7 @@ namespace WPF_Snake
 
             while (true)
             {
-                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail())
+                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake))
                 {
                     break;
                 }
@@ -93,7 +102,7 @@ namespace WPF_Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(350 / lvl);
+                Thread.Sleep(400 / lvl);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();

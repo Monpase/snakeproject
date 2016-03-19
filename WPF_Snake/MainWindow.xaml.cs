@@ -24,13 +24,14 @@ namespace WPF_Snake
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         SnakeRepository sr = new SnakeRepository();
         public MainWindow()
         {
             InitializeComponent();
             listBoxMap.Items.Add("Коробочка");
             listBoxMap.Items.Add("Комнаты");
+            listBoxMap.Items.Add("Туннель");
             comboBoxLevel.Items.Add("1");
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
@@ -51,14 +52,12 @@ namespace WPF_Snake
             string mapGame = "";
             try
             {
-                lvlGame = comboBoxLevel.SelectedIndex;
+                lvlGame = comboBoxLevel.SelectedIndex + 1;
                 mapGame = listBoxMap.SelectedItem.ToString();
                 Object selectedLvl = comboBoxLevel.SelectedItem;
                 Object selectedMap = listBoxMap.SelectedItem;
-                MessageBox.Show("Уровень сложности: " + selectedLvl.ToString() + "\n" +
-                        "Карта: " + selectedMap.ToString());
             }
-            catch(NullReferenceException)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Выберите уровень сложности и карту!");
             }
@@ -66,12 +65,12 @@ namespace WPF_Snake
             {
                 sr.OnClickPlay();
             }
-           
+
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+
         }
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
