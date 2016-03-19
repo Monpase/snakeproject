@@ -29,21 +29,49 @@ namespace WPF_Snake
         public MainWindow()
         {
             InitializeComponent();
+            listBoxMap.Items.Add("Коробочка");
+            listBoxMap.Items.Add("Комнаты");
+            comboBoxLevel.Items.Add("1");
+            comboBoxLevel.Items.Add("2");
+            comboBoxLevel.Items.Add("3");
+            comboBoxLevel.Items.Add("4");
+            comboBoxLevel.Items.Add("5");
+            comboBoxLevel.Items.Add("6");
+            comboBoxLevel.Items.Add("7");
+            comboBoxLevel.Items.Add("8");
+            comboBoxLevel.Items.Add("9");
+            comboBoxLevel.Items.Add("10");
         }
-
-
-
 
 
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            sr.OnClickPlay();
+            int lvlGame = 0;
+            string mapGame = "";
+            try
+            {
+                lvlGame = comboBoxLevel.SelectedIndex;
+                mapGame = listBoxMap.SelectedItem.ToString();
+                Object selectedLvl = comboBoxLevel.SelectedItem;
+                Object selectedMap = listBoxMap.SelectedItem;
+                MessageBox.Show("Уровень сложности: " + selectedLvl.ToString() + "\n" +
+                        "Карта: " + selectedMap.ToString());
+            }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Выберите уровень сложности и карту!");
+            }
+            if (lvlGame > 0 && lvlGame < 11 && (mapGame == "Коробочка" || mapGame == "Комнаты"))
+            {
+                sr.OnClickPlay();
+            }
+           
         }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)

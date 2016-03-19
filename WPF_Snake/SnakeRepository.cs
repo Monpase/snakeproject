@@ -111,7 +111,7 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            Environment.Exit(0);
+            
         }
         static void WriteGameOver()
         {
