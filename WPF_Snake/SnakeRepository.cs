@@ -87,7 +87,7 @@ namespace WPF_Snake
                 walls.Draw();
                 tunnel.Draw();
             }
-            //Геор, напиши здесь код для случая, когда выбирают туннель
+            
 
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -106,7 +106,7 @@ namespace WPF_Snake
 
             while (true)
             {
-                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail())
+                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake)) 
                 {
                     break;
                 }
@@ -123,7 +123,7 @@ namespace WPF_Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(350 / lvl);
+                Thread.Sleep(500 / lvl);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
