@@ -12,6 +12,7 @@ namespace WPF_Snake
 {
     class SnakeRepository
     {
+        
         Record rec = new Record();
 
         private int _level;
@@ -140,6 +141,7 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
+            
             
         }
         static void WriteGameOver()
