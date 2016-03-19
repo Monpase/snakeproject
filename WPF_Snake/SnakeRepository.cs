@@ -70,12 +70,12 @@ namespace WPF_Snake
             string map = _mapType;
 
 
-            if (map == "Коробочка")
+            if (map == "Box")
             {
                 walls = new Walls(80, 25);
                 walls.Draw();
             }
-            else if (map == "Комнаты")
+            else if (map == "Rooms")
             {
 
                 walls = new Walls(80, 25);
@@ -83,7 +83,7 @@ namespace WPF_Snake
                 rooms.Draw();
                 walls.Draw();
             }
-            else if (map == "Туннель")
+            else if (map == "Tunnel")
             {
                 tunnel = new Tunnel(80, 25);
                 walls = new Walls(80, 25);
@@ -105,7 +105,7 @@ namespace WPF_Snake
 
             Snake_Project.Point food = foodCreator.CreateFood();
 
-            if (map == "Комнаты")
+            if (map == "Rooms")
             {
                 if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
                 {
@@ -121,7 +121,7 @@ namespace WPF_Snake
                 }
             }
 
-            if (map == "Туннель")
+            if (map == "Tunnel")
             {
                 if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 14)) // промежутки стен карты
                 {
@@ -132,6 +132,10 @@ namespace WPF_Snake
                 {
                     food.Draw();
                 }
+            }
+            if (map == "Box")
+            {
+                food.Draw();
             }
             int score = 0;
 
@@ -169,7 +173,7 @@ namespace WPF_Snake
 
             Console.SetCursorPosition(30, 16);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Введите ваше имя:");
+            Console.WriteLine("Enter your name:");
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
@@ -186,10 +190,10 @@ namespace WPF_Snake
             int yOffset = 8;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("В   А   Ш      С   Ч   Е   Т", xOffset, yOffset++);
+            WriteText("================================", xOffset, yOffset++);
+            WriteText("G   A   M   E      O   V   E   R", xOffset + 1, yOffset++);
+            WriteText("================================", xOffset, yOffset++);
+            WriteText("Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
 
 
         }
