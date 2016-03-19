@@ -1,6 +1,7 @@
 ﻿using Snake_Project;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -10,11 +11,14 @@ using WPF_Snake.GameClasses;
 
 namespace WPF_Snake
 {
+    public delegate void GameOver();
+
     class SnakeRepository
     {
 
         Record rec = new Record();
-
+        public event GameOver OnEnded;
+        
         private int _level;
 
         public int Level
@@ -50,13 +54,12 @@ namespace WPF_Snake
         {
             
             AllocConsole();
-            int lvl = _level;
-
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
             Tunnel tunnel = new Tunnel(0, 0);
             string map = _mapType;
+            int lvl = _level;
 
 
             if (map == "Box")
@@ -166,8 +169,9 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            Console.Clear();
-            //FreeConsole();
+            FreeConsole();
+            OnEnded();
+            
 
 
 
