@@ -47,10 +47,9 @@
 
         <ListBox Name="listBoxMap"           
                  Grid.Row="2"
-                 Grid.RowSpan="2"
                  Grid.Column="1"
                  Width="164"
-                 Height="52"
+                 Height="58"
                  Margin="22,67,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged"
@@ -82,7 +81,7 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="22,33,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Choose map" VerticalAlignment="Top" Height="29" Width="155" FontFamily="Showcard Gothic" FontSize="24" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="33,33,0,0" Grid.Row="2" TextWrapping="Wrap" Text="Choose level" VerticalAlignment="Top" Height="29" Width="173" FontFamily="Showcard Gothic" FontSize="24"/>
-        <TextBlock HorizontalAlignment="Left" Margin="79,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="the Snake game" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="83" Width="596" FontFamily="Showcard Gothic" FontSize="72" Foreground="#FF081568"/>
+        <TextBlock HorizontalAlignment="Left" Margin="79,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="the Snake game" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="83" Width="596" FontFamily="Showcard Gothic"  FontSize="72" Foreground="#FF081568"/>
         <Button x:Name="ButtonScores"
         	Grid.Row="4"
         	Width="161"
