@@ -100,7 +100,7 @@ namespace WPF_Snake
                 {
 
                     food.x = food.x + 1;
-                    food.y = food.y + 7;
+                    food.y = food.y + 6;
                     food.Draw();
                 }
 
