@@ -66,6 +66,7 @@
     <Compile Include="GameClasses\Walls.cs" />
     <Compile Include="DBrecords\Record.cs" />
     <Compile Include="DBrecords\RecordContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SnakeRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
