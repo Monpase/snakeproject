@@ -157,7 +157,7 @@ namespace WPF_Snake
             }
             Console.Clear();
             WriteGameOver();
-            Console.SetCursorPosition(38, 14);
+            Console.SetCursorPosition(41, 14);
             Console.WriteLine(score * 10);
 
             Console.SetCursorPosition(30, 16);
@@ -179,10 +179,10 @@ namespace WPF_Snake
             int yOffset = 8;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
-            WriteText("================================", xOffset, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
             WriteText("G   A   M   E      O   V   E   R", xOffset + 1, yOffset++);
-            WriteText("================================", xOffset, yOffset++);
-            WriteText("Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
+            WriteText(" Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
 
 
         }
