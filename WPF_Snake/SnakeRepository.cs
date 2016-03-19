@@ -6,12 +6,33 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using WPF_Snake.GameClasses;
 
 namespace WPF_Snake
 {
     class SnakeRepository
     {
+
         Record rec = new Record();
+
+        private int _level;
+
+        public int Level
+        {
+            get { return _level; }
+            set { _level = value; }
+        }
+
+        private string _mapType;
+
+        public string MapType
+        {
+            get { return _mapType; }
+            set { _mapType = value; }
+        }
+
+
+
         static void WriteText(String text, int xOffset, int yOffset)
         {
             Console.SetCursorPosition(xOffset, yOffset);
@@ -22,35 +43,28 @@ namespace WPF_Snake
         [DllImport("Kernel32")]
         public static extern void AllocConsole();
 
+        [DllImport("Kernel32")]
+        public static extern void FreeConsole();
+
         public void OnClickPlay()
         {
+            
             AllocConsole();
-            Console.WriteLine("Выберите уровень сложности от 1 до 10:");
-            int lvl = int.Parse(Console.ReadLine());
-
-            while (lvl < 1 || lvl > 10)
-            {
-                Console.Clear();
-                Console.WriteLine("Введите корректный уровень сложности:");
-                lvl = int.Parse(Console.ReadLine());
-            }
-
-
+            int lvl = _level;
 
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
-            Console.Clear();
-            Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
-            int map = int.Parse(Console.ReadLine());
+            Tunnel tunnel = new Tunnel(0, 0);
+            string map = _mapType;
 
 
-            if (map == 1)
+            if (map == "Box")
             {
                 walls = new Walls(80, 25);
                 walls.Draw();
             }
-            else if (map == 2)
+            else if (map == "Rooms")
             {
 
                 walls = new Walls(80, 25);
@@ -58,6 +72,15 @@ namespace WPF_Snake
                 rooms.Draw();
                 walls.Draw();
             }
+            else if (map == "Tunnel")
+            {
+                tunnel = new Tunnel(80, 25);
+                walls = new Walls(80, 25);
+                walls.Draw();
+                tunnel.Draw();
+
+            }
+
 
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -67,16 +90,47 @@ namespace WPF_Snake
             snake.Draw();
 
 
-            FoodCreator foodCreator = new FoodCreator(60, 25, '*');
+            FoodCreator foodCreator = new FoodCreator(79, 25, '*');
 
             Snake_Project.Point food = foodCreator.CreateFood();
-            food.Draw();
 
+            if (map == "Rooms")
+            {
+                if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
+                {
+
+                    food.x = food.x + 1;
+                    food.y = food.y + 6;
+                    food.Draw();
+                }
+
+                else
+                {
+                    food.Draw();
+                }
+            }
+
+            if (map == "Tunnel")
+            {
+                if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 14)) // промежутки стен карты
+                {
+                    food.y = food.y + 2;
+                    food.Draw();
+                }
+                else
+                {
+                    food.Draw();
+                }
+            }
+            if (map == "Box")
+            {
+                food.Draw();
+            }
             int score = 0;
 
             while (true)
             {
-                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail())
+                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake))
                 {
                     break;
                 }
@@ -88,12 +142,13 @@ namespace WPF_Snake
                     score++;
 
                 }
+
                 else
                 {
                     snake.Move();
                 }
 
-                Thread.Sleep(350 / lvl);
+                Thread.Sleep(600 / lvl);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
@@ -102,16 +157,20 @@ namespace WPF_Snake
             }
             Console.Clear();
             WriteGameOver();
-            Console.SetCursorPosition(38, 14);
+            Console.SetCursorPosition(41, 14);
             Console.WriteLine(score * 10);
 
             Console.SetCursorPosition(30, 16);
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Введите ваше имя:");
+            Console.WriteLine("Enter your name:");
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            Console.ReadLine();
+            //Console.Clear();
+            FreeConsole();
+
+
+
         }
         static void WriteGameOver()
         {
@@ -120,10 +179,10 @@ namespace WPF_Snake
             int yOffset = 8;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
-            WriteText("============================", xOffset, yOffset++);
-            WriteText("В   А   Ш      С   Ч   Е   Т", xOffset, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
+            WriteText("G   A   M   E      O   V   E   R", xOffset + 1, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
+            WriteText(" Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
 
 
         }

@@ -29,21 +29,47 @@ namespace WPF_Snake
         public MainWindow()
         {
             InitializeComponent();
+            listBoxMap.Items.Add("Box");
+            listBoxMap.Items.Add("Rooms");
+            listBoxMap.Items.Add("Tunnel");
+            comboBoxLevel.Items.Add("1");
+            comboBoxLevel.Items.Add("2");
+            comboBoxLevel.Items.Add("3");
+            comboBoxLevel.Items.Add("4");
+            comboBoxLevel.Items.Add("5");
+            comboBoxLevel.Items.Add("6");
+            comboBoxLevel.Items.Add("7");
+            comboBoxLevel.Items.Add("8");
+            comboBoxLevel.Items.Add("9");
+            comboBoxLevel.Items.Add("10");
         }
 
-
-
-
+        
 
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            sr.OnClickPlay();
+           
+           if (comboBoxLevel.SelectedIndex <0 || listBoxMap.SelectedItem == null)
+           {
+               MessageBox.Show("Set the level and the map!");
+               return;
+           }
+           sr.Level = comboBoxLevel.SelectedIndex+1;
+           sr.MapType = listBoxMap.SelectedItem.ToString();
+           sr.OnClickPlay();
         }
+
+        
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
+        }
 
+        private void ButtonScores_Click(object sender, RoutedEventArgs e)
+        {
+            //some actions
         }
 
 
