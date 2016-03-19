@@ -48,10 +48,10 @@ namespace WPF_Snake
 
         public void OnClickPlay()
         {
-            
+
+
             AllocConsole();
             int lvl = _level;
-
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
