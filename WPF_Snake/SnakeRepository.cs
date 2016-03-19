@@ -72,7 +72,7 @@ namespace WPF_Snake
                 walls = new Walls(80, 25);
                 walls.Draw();
             }
-            else if (map == "Комната")
+            else if (map == "Комнаты")
             {
 
                 walls = new Walls(80, 25);
