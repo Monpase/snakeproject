@@ -72,7 +72,7 @@ namespace WPF_Snake
                 walls = new Walls(80, 25);
                 walls.Draw();
             }
-            else if (map == "Комната")
+            else if (map == "Комнаты")
             {
 
                 walls = new Walls(80, 25);
@@ -141,7 +141,7 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            
+                       
             
         }
         static void WriteGameOver()
