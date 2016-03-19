@@ -77,6 +77,7 @@ namespace WPF_Snake
                 rooms.Draw();
                 walls.Draw();
             }
+            //Геор, напиши здесь код для случая, когда выбирают туннель
 
             // Отрисовка точек	
             Console.ForegroundColor = ConsoleColor.DarkGreen;
