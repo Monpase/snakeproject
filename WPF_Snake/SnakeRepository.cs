@@ -48,6 +48,7 @@ namespace WPF_Snake
 
         public void OnClickPlay()
         {
+            
             AllocConsole();
             int lvl = _level;
 
@@ -166,7 +167,7 @@ namespace WPF_Snake
             rec.Result = score;
             rec.Name = Console.ReadLine();
             Console.Clear();
-            FreeConsole();
+            //FreeConsole();
 
 
 
