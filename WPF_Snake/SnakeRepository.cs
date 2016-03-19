@@ -49,24 +49,12 @@ namespace WPF_Snake
         public void OnClickPlay()
         {
             AllocConsole();
-            // Console.WriteLine("Выберите уровень сложности от 1 до 10:");
             int lvl = _level;
-
-            //while (lvl < 1 || lvl > 10)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine("Введите корректный уровень сложности:");
-            //    lvl = int.Parse(Console.ReadLine());
-            //}
-
-
 
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
             Tunnel tunnel = new Tunnel(0, 0);
-            //Console.Clear();
-            //Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
             string map = _mapType;
 
 

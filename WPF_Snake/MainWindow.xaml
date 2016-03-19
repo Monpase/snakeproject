@@ -1,7 +1,8 @@
 ﻿<Window x:Class="WPF_Snake.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow"
+        Icon="icosnake.ico"
+        Title="SNAKE"
         Width="788.158"
         Height="474.316">
     <Grid Margin="10,0,-8,-21">
