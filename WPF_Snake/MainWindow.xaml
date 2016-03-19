@@ -50,7 +50,7 @@
                  Grid.RowSpan="2"
                  Grid.Column="1"
                  Width="164"
-                 Height="106"
+                 Height="52"
                  Margin="22,67,0,0"
                  HorizontalAlignment="Left"
                  VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged"

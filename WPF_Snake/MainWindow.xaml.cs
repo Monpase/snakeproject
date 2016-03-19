@@ -57,9 +57,7 @@ namespace WPF_Snake
            }
            sr.Level = comboBoxLevel.SelectedIndex+1;
            sr.MapType = listBoxMap.SelectedItem.ToString();
-           Thread cg = new Thread(sr.OnClickPlay);
-           cg.Start();
-           sr.OnEnded += cg.Abort;
+           sr.OnClickPlay();
         }
 
         

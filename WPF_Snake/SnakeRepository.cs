@@ -1,7 +1,6 @@
 ﻿using Snake_Project;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -11,14 +10,11 @@ using WPF_Snake.GameClasses;
 
 namespace WPF_Snake
 {
-    public delegate void GameOver();
-
     class SnakeRepository
     {
 
         Record rec = new Record();
-        public event GameOver OnEnded;
-        
+
         private int _level;
 
         public int Level
@@ -54,12 +50,13 @@ namespace WPF_Snake
         {
             
             AllocConsole();
+            int lvl = _level;
+
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
             Tunnel tunnel = new Tunnel(0, 0);
             string map = _mapType;
-            int lvl = _level;
 
 
             if (map == "Box")
@@ -151,7 +148,7 @@ namespace WPF_Snake
                     snake.Move();
                 }
 
-                Thread.Sleep(500 / lvl);
+                Thread.Sleep(600 / lvl);
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
@@ -160,7 +157,7 @@ namespace WPF_Snake
             }
             Console.Clear();
             WriteGameOver();
-            Console.SetCursorPosition(38, 14);
+            Console.SetCursorPosition(41, 14);
             Console.WriteLine(score * 10);
 
             Console.SetCursorPosition(30, 16);
@@ -169,9 +166,8 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
+            //Console.Clear();
             FreeConsole();
-            OnEnded();
-            
 
 
 
@@ -183,10 +179,10 @@ namespace WPF_Snake
             int yOffset = 8;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
-            WriteText("================================", xOffset, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
             WriteText("G   A   M   E      O   V   E   R", xOffset + 1, yOffset++);
-            WriteText("================================", xOffset, yOffset++);
-            WriteText("Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
+            WriteText("==================================", xOffset, yOffset++);
+            WriteText(" Y  O  U  R         S  C  O  R  E", xOffset, yOffset++);
 
 
         }
