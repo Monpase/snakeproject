@@ -29,9 +29,9 @@ namespace WPF_Snake
         public MainWindow()
         {
             InitializeComponent();
-            listBoxMap.Items.Add("Коробочка");
-            listBoxMap.Items.Add("Комнаты");
-            listBoxMap.Items.Add("Туннель");
+            listBoxMap.Items.Add("Box");
+            listBoxMap.Items.Add("Rooms");
+            listBoxMap.Items.Add("Tunnel");
             comboBoxLevel.Items.Add("1");
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
@@ -51,7 +51,7 @@ namespace WPF_Snake
            
            if (comboBoxLevel.SelectedIndex <0 || listBoxMap.SelectedItem == null)
            {
-               MessageBox.Show("Выберите уровень сложности и карту!");
+               MessageBox.Show("Set the level and the map!");
                return;
            }
            sr.Level = comboBoxLevel.SelectedIndex+1;
