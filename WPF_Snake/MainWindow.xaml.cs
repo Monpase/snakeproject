@@ -61,7 +61,7 @@ namespace WPF_Snake
             {
                 MessageBox.Show("Выберите уровень сложности и карту!");
             }
-            if (lvlGame > 0 && lvlGame < 11 && (mapGame == "Коробочка" || mapGame == "Комнаты"))
+            if (lvlGame > 0 && lvlGame < 11 && (mapGame == "Коробочка" || mapGame == "Комнаты" || mapGame == "Туннель" ))
             {
                 sr.OnClickPlay();
             }
