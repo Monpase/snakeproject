@@ -44,6 +44,7 @@ namespace WPF_Snake
             comboBoxLevel.Items.Add("10");
         }
 
+        
 
 
         public void Button_Click(object sender, RoutedEventArgs e)
