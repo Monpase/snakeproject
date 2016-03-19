@@ -43,6 +43,9 @@ namespace WPF_Snake
         [DllImport("Kernel32")]
         public static extern void AllocConsole();
 
+        [DllImport("Kernel32")]
+        public static extern void FreeConsole();
+
         public void OnClickPlay()
         {
             AllocConsole();
@@ -141,6 +144,9 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
+            Console.Clear();
+            FreeConsole();
+            
                        
             
         }
