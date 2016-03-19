@@ -107,13 +107,27 @@ namespace WPF_Snake
 
             if (map == "Комнаты")
             {
-                if ((food.x > 8 && food.x < 69) && (food.y > 10 && food.y < 20)) // промежутки стен карты
+                if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
                 {
 
-                    // что тут??? нужно чтобы сгенерировал еду еще раз
-
+                    food.x = food.x + 1;
+                    food.y = food.y + 7;
+                    food.Draw();
                 }
 
+                else
+                {
+                    food.Draw();
+                }
+            }
+
+            if (map == "Туннель")
+            {
+                if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 14)) // промежутки стен карты
+                {
+                    food.y = food.y + 2;
+                    food.Draw();
+                }
                 else
                 {
                     food.Draw();
