@@ -62,6 +62,7 @@
     </ApplicationDefinition>
     <Compile Include="GameClasses\Rooms.cs" />
     <Compile Include="GameClasses\Snake.cs" />
+    <Compile Include="GameClasses\Tunnel.cs" />
     <Compile Include="GameClasses\VerticalLine.cs" />
     <Compile Include="GameClasses\Walls.cs" />
     <Compile Include="DBrecords\Record.cs" />

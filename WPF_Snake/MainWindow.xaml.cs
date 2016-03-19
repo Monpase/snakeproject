@@ -31,6 +31,7 @@ namespace WPF_Snake
             InitializeComponent();
             listBoxMap.Items.Add("Коробочка");
             listBoxMap.Items.Add("Комнаты");
+            listBoxMap.Items.Add("Туннель");
             comboBoxLevel.Items.Add("1");
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
