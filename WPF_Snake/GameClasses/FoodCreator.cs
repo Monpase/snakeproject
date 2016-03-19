@@ -15,7 +15,7 @@ namespace Snake_Project
         Random random = new Random();
 
 
-        public FoodCreator(int mapWidth, int mapHeight, char sym)
+        public  FoodCreator(int mapWidth, int mapHeight, char sym)
         {
 
             this.mapWidht = mapWidth;
