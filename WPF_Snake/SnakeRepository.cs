@@ -166,8 +166,8 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            Console.Clear();
-            //FreeConsole();
+            //Console.Clear();
+            FreeConsole();
 
 
 
