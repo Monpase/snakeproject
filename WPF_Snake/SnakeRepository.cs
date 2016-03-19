@@ -112,7 +112,7 @@ namespace WPF_Snake
 
             if (map == "Tunnel")
             {
-                if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 14)) // промежутки стен карты
+                if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 15)) // промежутки стен карты
                 {
                     food.y = food.y + 2;
                     food.Draw();
