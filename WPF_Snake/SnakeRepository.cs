@@ -86,6 +86,7 @@ namespace WPF_Snake
                 walls = new Walls(80, 25);
                 walls.Draw();
                 tunnel.Draw();
+                
             }
             
 
@@ -97,9 +98,10 @@ namespace WPF_Snake
             snake.Draw();
 
 
-            FoodCreator foodCreator = new FoodCreator(60, 25, '*');
-
+            FoodCreator foodCreator = new FoodCreator(66, 25, '*');
+            
             Snake_Project.Point food = foodCreator.CreateFood();
+            
             food.Draw();
 
             int score = 0;
@@ -141,7 +143,7 @@ namespace WPF_Snake
             Console.SetCursorPosition(30, 17);
             rec.Result = score;
             rec.Name = Console.ReadLine();
-            
+                       
             
         }
         static void WriteGameOver()
