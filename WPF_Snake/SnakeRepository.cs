@@ -12,6 +12,25 @@ namespace WPF_Snake
     class SnakeRepository
     {
         Record rec = new Record();
+
+        private int _level;
+
+        public int Level
+        {
+            get { return _level; }
+            set { _level = value; }
+        }
+
+        private string _mapType;
+
+        public string MapType
+        {
+            get { return _mapType; }
+            set { _mapType = value; }
+        }
+        
+        
+        
         static void WriteText(String text, int xOffset, int yOffset)
         {
             Console.SetCursorPosition(xOffset, yOffset);
@@ -25,32 +44,32 @@ namespace WPF_Snake
         public void OnClickPlay()
         {
             AllocConsole();
-            Console.WriteLine("Выберите уровень сложности от 1 до 10:");
-            int lvl = int.Parse(Console.ReadLine());
+          // Console.WriteLine("Выберите уровень сложности от 1 до 10:");
+            int lvl = _level;
 
-            while (lvl < 1 || lvl > 10)
-            {
-                Console.Clear();
-                Console.WriteLine("Введите корректный уровень сложности:");
-                lvl = int.Parse(Console.ReadLine());
-            }
+            //while (lvl < 1 || lvl > 10)
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("Введите корректный уровень сложности:");
+            //    lvl = int.Parse(Console.ReadLine());
+            //}
 
 
 
             Console.SetBufferSize(80, 25);
             Walls walls = new Walls(0, 0);
             Rooms rooms = new Rooms(0, 0);
-            Console.Clear();
-            Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
-            int map = int.Parse(Console.ReadLine());
+            //Console.Clear();
+            //Console.WriteLine("Выберите тип карты: 1-Коробочка, 2-Комнаты");
+            string map = _mapType;
 
 
-            if (map == 1)
+            if (map =="Коробочка")
             {
                 walls = new Walls(80, 25);
                 walls.Draw();
             }
-            else if (map == 2)
+            else if (map == "комната")
             {
 
                 walls = new Walls(80, 25);
