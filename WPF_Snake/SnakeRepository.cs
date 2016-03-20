@@ -99,8 +99,8 @@ namespace WPF_Snake
                 if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
                 {
 
-                    food.x = food.x + 1;
-                    food.y = food.y + 6;
+                    food.x = 44;
+                    food.y = 6;
                     food.Draw();
                 }
 
@@ -114,7 +114,7 @@ namespace WPF_Snake
             {
                 if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 15)) // промежутки стен карты
                 {
-                    food.y = food.y + 2;
+                    food.y = 12;
                     food.Draw();
                 }
                 else
