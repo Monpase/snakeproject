@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WPF_Snake
 {
-    class RecordContext : DbContext
+    class Context : DbContext
     {
         DbSet<Record> Records { get; set; }
 
