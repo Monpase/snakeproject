@@ -59,7 +59,11 @@
                   Height="25"
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
-                  VerticalAlignment="Center" />
+                  VerticalAlignment="Center" >
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+        </ComboBox>
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -72,16 +76,14 @@
             <LineBreak /><Run />
         </TextBlock>
         <Button x:Name="ButtonAuthors"
-                Grid.Row="2"
-                Grid.RowSpan="2"
-                Grid.ColumnSpan="2"
-                Width="165"
+                Grid.Row="4"
+                Width="117"
                 Height="53"
-                Margin="207,114,0,0"
+                Margin="25,10,0,0"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Click="ButtonAuthors_Click"
-                Content="look at this wonderful doggo">
+                Content="about us" FontFamily="Showcard Gothic" FontSize="20" Grid.Column="1">
             <Button.Effect>
                 <DropShadowEffect />
             </Button.Effect>
@@ -95,7 +97,17 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  BorderBrush="#FFEE2D2D" />
+                  BorderBrush="#FFEE2D2D" >
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFC58989"/>
+                    <GradientStop Color="#FFC74A4A" Offset="0.662"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
 
 
 
