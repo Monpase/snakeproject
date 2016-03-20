@@ -46,7 +46,10 @@
                    FontFamily="Showcard Gothic"
                    FontSize="59"
                    Foreground="#FF081568"
-                   TextWrapping="Wrap"><Run Text="the snake game" />
+                   TextWrapping="Wrap">
+            <TextBlock.Effect>
+                <DropShadowEffect/>
+            </TextBlock.Effect><Run Text="the snake game" />
             <LineBreak /><Run />
         </TextBlock>
         <ComboBox Name="comboBoxLevel"
@@ -56,7 +59,11 @@
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  SelectionChanged="comboBoxLevel_SelectionChanged" />
+                  SelectionChanged="comboBoxLevel_SelectionChanged" >
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+        </ComboBox>
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -76,7 +83,11 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  SelectionChanged="ListBox_SelectionChanged" />
+                  SelectionChanged="ListBox_SelectionChanged" >
+            <ComboBox.Effect>
+                <DropShadowEffect/>
+            </ComboBox.Effect>
+        </ComboBox>
 
 
 
@@ -105,6 +116,9 @@
                 FontSize="30"
                 Foreground="Black"
                 RenderTransformOrigin="0.619,0.674">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="1" Color="#FF5B3B3B" />
@@ -127,6 +141,9 @@
                 FontFamily="Showcard Gothic"
                 FontSize="33"
                 RenderTransformOrigin="0.619,0.674">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Offset="1" Color="#FF5B3B3B" />
