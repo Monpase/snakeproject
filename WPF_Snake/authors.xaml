@@ -41,9 +41,12 @@
                    FontSize="22"
                    Text="Ilya Saschenko"
                    TextWrapping="Wrap" />
-        <Image Margin="340,196,123,37"
-               Source="Image4.png"
-               Stretch="Fill" />
+        <Image Width="171"
+               Height="217"
+               Margin="371,189,0,0"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Source="cobra_clip.png" />
     </Grid>
 </Window>
 
