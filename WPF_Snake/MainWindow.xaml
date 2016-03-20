@@ -59,9 +59,9 @@
                   Height="25"
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
-                  VerticalAlignment="Center" >
+                  VerticalAlignment="Center">
             <ComboBox.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect />
             </ComboBox.Effect>
         </ComboBox>
         <TextBlock Grid.Row="2"
@@ -75,20 +75,6 @@
                    TextWrapping="Wrap"><Run Text="choose level" />
             <LineBreak /><Run />
         </TextBlock>
-        <Button x:Name="ButtonAuthors"
-                Grid.Row="4"
-                Width="117"
-                Height="53"
-                Margin="25,10,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Click="ButtonAuthors_Click"
-                Content="about us" FontFamily="Showcard Gothic" FontSize="20" Grid.Column="1">
-            <Button.Effect>
-                <DropShadowEffect />
-            </Button.Effect>
-        </Button>
-
         <ComboBox Name="ComboBoxMap"
                   Grid.Row="2"
                   Grid.Column="2"
@@ -97,14 +83,14 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  BorderBrush="#FFEE2D2D" >
+                  BorderBrush="#FFEE2D2D">
             <ComboBox.Effect>
-                <DropShadowEffect/>
+                <DropShadowEffect />
             </ComboBox.Effect>
             <ComboBox.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFC58989"/>
-                    <GradientStop Color="#FFC74A4A" Offset="0.662"/>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FFC58989" />
+                    <GradientStop Offset="0.662" Color="#FFC74A4A" />
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
@@ -143,6 +129,23 @@
                 </LinearGradientBrush>
             </Button.Background>
 
+        </Button>
+
+        <Button x:Name="ButtonAuthors"
+                Grid.Row="4"
+                Grid.Column="1"
+                Width="117"
+                Height="53"
+                Margin="25,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="ButtonAuthors_Click"
+                Content="about us"
+                FontFamily="Showcard Gothic"
+                FontSize="20">
+            <Button.Effect>
+                <DropShadowEffect />
+            </Button.Effect>
         </Button>
 
         <Button x:Name="ButtonPlay"
