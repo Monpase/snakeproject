@@ -51,11 +51,12 @@
         </TextBlock>
         <ComboBox Name="comboBoxLevel"
                   Grid.Row="2"
-                  Width="170"
+                  Width="164"
                   Height="37"
-                  Margin="25,62,21,46"
+                  Margin="14,62,32,46"
                   HorizontalAlignment="Center"
-                  VerticalAlignment="Center" />
+                  VerticalAlignment="Center"
+                  SelectionChanged="comboBoxLevel_SelectionChanged" />
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -67,15 +68,15 @@
                    TextWrapping="Wrap"><Run Text="choose level" />
             <LineBreak /><Run />
         </TextBlock>
-        <ListBox Name="listBoxMap"
-                 Grid.Row="2"
-                 Grid.Column="2"
-                 Width="164"
-                 Height="58"
-                 Margin="20,62,32,25"
-                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center"
-                 SelectionChanged="ListBox_SelectionChanged" />
+        <ComboBox Name="ComboBoxMap"
+                  Grid.Row="2"
+                  Grid.Column="2"
+                  Width="164"
+                  Height="37"
+                  Margin="10,62,42,46"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  SelectionChanged="ListBox_SelectionChanged" />
 
 
 

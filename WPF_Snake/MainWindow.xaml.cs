@@ -30,9 +30,9 @@ namespace WPF_Snake
         public MainWindow()
         {
             InitializeComponent();
-            listBoxMap.Items.Add("Box");
-            listBoxMap.Items.Add("Rooms");
-            listBoxMap.Items.Add("Tunnel");
+            ComboBoxMap.Items.Add("Box");
+            ComboBoxMap.Items.Add("Rooms");
+            ComboBoxMap.Items.Add("Tunnel");
             comboBoxLevel.Items.Add("1");
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
@@ -51,13 +51,13 @@ namespace WPF_Snake
         public void Button_Click(object sender, RoutedEventArgs e)
         {
            
-           if (comboBoxLevel.SelectedIndex <0 || listBoxMap.SelectedItem == null)
+           if (comboBoxLevel.SelectedIndex <0 || ComboBoxMap.SelectedItem == null)
            {
                MessageBox.Show("Set the level and the map!");
                return;
            }
            sr.Level = comboBoxLevel.SelectedIndex+1;
-           sr.MapType = listBoxMap.SelectedItem.ToString();
+           sr.MapType = ComboBoxMap.SelectedItem.ToString();
            sr.OnClickPlay();
            
         }
@@ -72,6 +72,11 @@ namespace WPF_Snake
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
           //  MessageBox.Show(rec.Name + rec.Result);
+        }
+
+        private void comboBoxLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
 
