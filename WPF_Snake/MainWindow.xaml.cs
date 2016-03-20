@@ -83,6 +83,11 @@ namespace WPF_Snake
             a.Show();
         }
 
+        private void Post_Click(object sender, RoutedEventArgs e)
+        {
+            Log
+        }
+
 
 
     }
