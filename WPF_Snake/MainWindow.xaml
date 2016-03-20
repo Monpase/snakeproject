@@ -4,8 +4,7 @@
         Title="SNAKE"
         Width="643.254"
         Height="474.316"
-        Icon="icosnake.ico"
-        >
+        Icon="icosnake.ico">
 
     <Grid Margin="10,0,-8,-21">
         <Grid.RowDefinitions>
@@ -60,8 +59,11 @@
                   Height="25"
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                   />
+                  VerticalAlignment="Center">
+            <ComboBox.Effect>
+                <DropShadowEffect />
+            </ComboBox.Effect>
+        </ComboBox>
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -81,7 +83,17 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                   />
+                  BorderBrush="#FFEE2D2D">
+            <ComboBox.Effect>
+                <DropShadowEffect />
+            </ComboBox.Effect>
+            <ComboBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FFC58989" />
+                    <GradientStop Offset="0.662" Color="#FFC74A4A" />
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
 
 
 
@@ -119,6 +131,23 @@
 
         </Button>
 
+        <Button x:Name="ButtonAuthors"
+                Grid.Row="4"
+                Grid.Column="1"
+                Width="117"
+                Height="53"
+                Margin="25,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="ButtonAuthors_Click"
+                Content="about us"
+                FontFamily="Showcard Gothic"
+                FontSize="20">
+            <Button.Effect>
+                <DropShadowEffect />
+            </Button.Effect>
+        </Button>
+
         <Button x:Name="ButtonPlay"
                 Grid.Row="4"
                 Grid.Column="2"
@@ -140,8 +169,6 @@
             </Button.Background>
 
         </Button>
-        <Button x:Name="ButtonAuthors" Content="hi" Grid.Column="1" HorizontalAlignment="Left" Margin="67,130,0,0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="75" Click="ButtonAuthors_Click"/>
-
     </Grid>
 
 </Window>

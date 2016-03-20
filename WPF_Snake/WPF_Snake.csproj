@@ -78,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="authors.xaml.cs">
+      <DependentUpon>authors.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameClasses\Rooms.cs" />
     <Compile Include="GameClasses\Snake.cs" />
     <Compile Include="GameClasses\Tunnel.cs" />
@@ -85,15 +88,12 @@
     <Compile Include="GameClasses\Walls.cs" />
     <Compile Include="DBrecords\Record.cs" />
     <Compile Include="DBrecords\Context.cs" />
-    <Compile Include="Migrations\201603201801212_current.cs" />
-    <Compile Include="Migrations\201603201801212_current.Designer.cs">
-      <DependentUpon>201603201801212_current.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="ScoresWindow.xaml.cs">
-      <DependentUpon>ScoresWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SnakeRepository.cs" />
+    <Page Include="authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,10 +110,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ScoresWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameClasses\Point.cs" />
@@ -130,9 +126,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201603201801212_current.resx">
-      <DependentUpon>201603201801212_current.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -168,7 +161,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="VK API\" />
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
