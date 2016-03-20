@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="SNAKE"
-        Width="788.158"
+        Width="594.128"
         Height="474.316"
         Icon="icosnake.ico">
     <Grid Margin="10,0,-8,-21">
@@ -15,15 +15,15 @@
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="259*" />
-            <ColumnDefinition Width="260*" />
-            <ColumnDefinition Width="259*" />
+            <ColumnDefinition Width="27*" />
+            <ColumnDefinition Width="19*" />
+            <ColumnDefinition Width="27*" />
         </Grid.ColumnDefinitions>
         <Rectangle x:Name="Verhnyaya_polosa"
                    Grid.RowSpan="2"
                    Grid.ColumnSpan="3"
                    Height="145"
-                   Margin="-11,-1,6,0"
+                   Margin="-11,-1,0,0"
                    VerticalAlignment="Top"
                    Opacity="0.7"
                    Stroke="Transparent">
@@ -34,71 +34,74 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <StackPanel Margin="0" Orientation="Horizontal" />
+        <StackPanel Grid.RowSpan="2"
+                    Margin="0,0,0,144"
+                    Orientation="Horizontal" />
 
         <TextBlock Grid.Row="1"
                    Grid.ColumnSpan="3"
-                   Width="596"
-                   Height="83"
-                   Margin="79,10,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
+                   Margin="49,26,52,35"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Stretch"
                    FontFamily="Showcard Gothic"
-                   FontSize="72"
+                   FontSize="59"
                    Foreground="#FF081568"
-                   Text="the Snake game"
-                   TextWrapping="Wrap" />
+                   TextWrapping="Wrap"><Run Text="the snake game" />
+            <LineBreak /><Run />
+        </TextBlock>
         <ComboBox Name="comboBoxLevel"
                   Grid.Row="2"
-                  Width="164"
-                  Height="23"
-                  Margin="33,67,0,0"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top" />
+                  Width="170"
+                  Height="37"
+                  Margin="25,62,21,46"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center" />
         <TextBlock Grid.Row="2"
-                   Width="173"
-                   Height="29"
-                   Margin="33,33,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
+                   Width="194"
+                   Height="52"
+                   Margin="14,14,8,79"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    FontFamily="Showcard Gothic"
-                   FontSize="24"
-                   Text="Choose level"
-                   TextWrapping="Wrap" />
+                   FontSize="28"
+                   TextWrapping="Wrap"><Run Text="choose level" />
+            <LineBreak /><Run />
+        </TextBlock>
         <ListBox Name="listBoxMap"
                  Grid.Row="2"
-                 Grid.Column="1"
+                 Grid.Column="2"
                  Width="164"
                  Height="58"
-                 Margin="76,67,0,0"
-                 HorizontalAlignment="Left"
-                 VerticalAlignment="Top"
+                 Margin="20,62,32,25"
+                 HorizontalAlignment="Center"
+                 VerticalAlignment="Center"
                  SelectionChanged="ListBox_SelectionChanged" />
 
 
 
         <TextBlock Grid.Row="2"
-                   Grid.Column="1"
-                   Width="155"
-                   Height="29"
-                   Margin="76,33,0,0"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Top"
+                   Grid.Column="2"
+                   Width="184"
+                   Height="48"
+                   Margin="10,14,22,83"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
                    FontFamily="Showcard Gothic"
-                   FontSize="24"
-                   Text="Choose map"
-                   TextWrapping="Wrap" />
+                   FontSize="28"
+                   TextWrapping="Wrap"><Run Text="choose map" />
+            <LineBreak /><Run />
+        </TextBlock>
         <Button x:Name="ButtonScores"
                 Grid.Row="4"
-                Width="161"
-                Height="45"
-                Margin="45,25,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
+                Width="202"
+                Height="63"
+                Margin="14,10,0,34"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
                 Click="ButtonScores_Click"
                 Content="High scores"
                 FontFamily="Showcard Gothic"
-                FontSize="20"
+                FontSize="30"
                 Foreground="Black"
                 RenderTransformOrigin="0.619,0.674">
             <Button.Background>
@@ -113,15 +116,15 @@
         <Button x:Name="ButtonPlay"
                 Grid.Row="4"
                 Grid.Column="2"
-                Width="116"
-                Height="45"
-                Margin="46,25,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
+                Width="174"
+                Height="63"
+                Margin="20,10,22,34"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
                 Click="Button_Click"
-                Content="Play"
+                Content="play"
                 FontFamily="Showcard Gothic"
-                FontSize="20"
+                FontSize="33"
                 RenderTransformOrigin="0.619,0.674">
             <Button.Background>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
