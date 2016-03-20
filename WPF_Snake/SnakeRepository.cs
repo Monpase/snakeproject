@@ -154,7 +154,7 @@ namespace WPF_Snake
                     ConsoleKeyInfo key = Console.ReadKey();
                     if (key.Key.ToString() == "UpArrow")
                     {
-
+                        
                     }
                     snake.HandleKey(key.Key);
                 }
@@ -163,7 +163,6 @@ namespace WPF_Snake
             WriteGameOver();
             Console.SetCursorPosition(38, 13);
             Console.WriteLine(score * 10);
-
             Console.SetCursorPosition(30, 15);
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Enter your name:");

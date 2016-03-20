@@ -24,7 +24,7 @@ namespace WPF_Snake
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        Record rec = new Record();
         SnakeRepository sr = new SnakeRepository();
         public MainWindow()
         {
@@ -69,7 +69,7 @@ namespace WPF_Snake
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
-            //some actions
+          //  MessageBox.Show(rec.Name + rec.Result);
         }
 
 
