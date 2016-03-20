@@ -25,14 +25,14 @@ namespace WPF_Snake
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        //Record rec = new Record();
         SnakeRepository sr = new SnakeRepository();
         public MainWindow()
         {
             InitializeComponent();
-            listBoxMap.Items.Add("Box");
-            listBoxMap.Items.Add("Rooms");
-            listBoxMap.Items.Add("Tunnel");
+            comboBoxMap.Items.Add("Box");
+            comboBoxMap.Items.Add("Rooms");
+            comboBoxMap.Items.Add("Tunnel");
             comboBoxLevel.Items.Add("1");
             comboBoxLevel.Items.Add("2");
             comboBoxLevel.Items.Add("3");
@@ -50,14 +50,14 @@ namespace WPF_Snake
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-           
-           if (comboBoxLevel.SelectedIndex <0 || listBoxMap.SelectedItem == null)
+
+            if (comboBoxLevel.SelectedIndex < 0 || comboBoxMap.SelectedItem == null)
            {
                MessageBox.Show("Set the level and the map!");
                return;
            }
            sr.Level = comboBoxLevel.SelectedIndex+1;
-           sr.MapType = listBoxMap.SelectedItem.ToString();
+           sr.MapType = comboBoxMap.SelectedItem.ToString();
            sr.OnClickPlay();
            
         }
