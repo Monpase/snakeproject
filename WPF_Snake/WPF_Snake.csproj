@@ -87,6 +87,7 @@
     <Compile Include="DBrecords\Context.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SnakeRepository.cs" />
+    <Compile Include="VK API\VKRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
