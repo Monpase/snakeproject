@@ -59,7 +59,7 @@
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  SelectionChanged="comboBoxLevel_SelectionChanged" />
+                   />
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -79,7 +79,7 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  SelectionChanged="ListBox_SelectionChanged" />
+                   />
 
 
 
