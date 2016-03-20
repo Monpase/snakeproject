@@ -69,8 +69,8 @@ namespace WPF_Snake
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
-         //   ScoresWindow win = new ScoresWindow();
-           // win.Show();
+            highscoresWindow h = new highscoresWindow();
+            h.Show();
         }
 
 
