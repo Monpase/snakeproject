@@ -91,6 +91,10 @@
     <Compile Include="highscoresWindow.xaml.cs">
       <DependentUpon>highscoresWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603202038597_Initial.cs" />
+    <Compile Include="Migrations\201603202038597_Initial.Designer.cs">
+      <DependentUpon>201603202038597_Initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SnakeRepository.cs" />
     <Page Include="authors.xaml">
@@ -133,6 +137,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201603202038597_Initial.resx">
+      <DependentUpon>201603202038597_Initial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

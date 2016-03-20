@@ -170,14 +170,15 @@ namespace WPF_Snake
             
             int locResult = score;
             string locName = Console.ReadLine();
+            // FAILED TO ACCOMPLISH THIS, SORRY GUYS 
             //var context = new Context();
-            
+
 
             //using (context)
             //{
             //    var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
-            //   context.Records.Add(newRecord);
-            //   context.SaveChanges();
+            //    context.Records.Add(newRecord);
+            //    context.SaveChanges();
             //}
             FreeConsole();
 
