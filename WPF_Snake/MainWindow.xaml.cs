@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using WPF_Snake.VK_API;
 
 namespace WPF_Snake
 {
@@ -85,7 +86,9 @@ namespace WPF_Snake
 
         private void Post_Click(object sender, RoutedEventArgs e)
         {
-            //Log
+            LogInVK vk = new LogInVK();
+            vk.Show();
+
         }
 
 
