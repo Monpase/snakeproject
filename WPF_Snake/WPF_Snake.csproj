@@ -88,9 +88,16 @@
     <Compile Include="GameClasses\Walls.cs" />
     <Compile Include="DBrecords\Record.cs" />
     <Compile Include="DBrecords\Context.cs" />
+    <Compile Include="highscores.xaml.cs">
+      <DependentUpon>highscores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SnakeRepository.cs" />
     <Page Include="authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="highscores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
