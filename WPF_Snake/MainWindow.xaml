@@ -4,8 +4,7 @@
         Title="SNAKE"
         Width="643.254"
         Height="474.316"
-        Icon="icosnake.ico"
-        >
+        Icon="icosnake.ico">
 
     <Grid Margin="10,0,-8,-21">
         <Grid.RowDefinitions>
@@ -60,8 +59,7 @@
                   Height="25"
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
-                  VerticalAlignment="Center"
-                   />
+                  VerticalAlignment="Center" />
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
@@ -73,6 +71,22 @@
                    TextWrapping="Wrap"><Run Text="choose level" />
             <LineBreak /><Run />
         </TextBlock>
+        <Button x:Name="ButtonAuthors"
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.ColumnSpan="2"
+                Width="165"
+                Height="53"
+                Margin="207,114,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="ButtonAuthors_Click"
+                Content="look at this wonderful doggo">
+            <Button.Effect>
+                <DropShadowEffect />
+            </Button.Effect>
+        </Button>
+
         <ComboBox Name="ComboBoxMap"
                   Grid.Row="2"
                   Grid.Column="2"
@@ -81,7 +95,7 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                   />
+                  BorderBrush="#FFEE2D2D" />
 
 
 
@@ -140,8 +154,6 @@
             </Button.Background>
 
         </Button>
-        <Button x:Name="ButtonAuthors" Content="hi" Grid.Column="1" HorizontalAlignment="Left" Margin="67,130,0,0" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Top" Width="75" Click="ButtonAuthors_Click"/>
-
     </Grid>
 
 </Window>

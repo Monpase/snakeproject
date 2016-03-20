@@ -26,6 +26,7 @@ namespace WPF_Snake
     public partial class MainWindow : Window
     {
         
+        
         SnakeRepository sr = new SnakeRepository();
         public MainWindow()
         {
@@ -71,13 +72,14 @@ namespace WPF_Snake
           //  MessageBox.Show(rec.Name + rec.Result);
         }
 
-        
 
+        
        
 
         private void ButtonAuthors_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("хай");
+            authors a = new authors();
+            a.Show();
         }
 
 
