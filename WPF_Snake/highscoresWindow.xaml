@@ -18,7 +18,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+        <TextBlock FontSize="20" Grid.RowSpan="2" Grid.ColumnSpan="3" TextAlignment="Center" VerticalAlignment="Center" FontFamily="Helvetica">YOU SCORE IS THE BEST!</TextBlock>
         
     </Grid>
 </Window>
