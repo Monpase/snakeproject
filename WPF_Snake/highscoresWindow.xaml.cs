@@ -17,9 +17,9 @@ namespace WPF_Snake
     /// <summary>
     /// Логика взаимодействия для highscores.xaml
     /// </summary>
-    public partial class highscores : Window
+    public partial class highscoresWindow : Window
     {
-        public highscores()
+        public highscoresWindow()
         {
             InitializeComponent();
         }
