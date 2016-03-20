@@ -85,7 +85,7 @@ namespace WPF_Snake
 
         private void Post_Click(object sender, RoutedEventArgs e)
         {
-            Log
+            //Log
         }
 
 
