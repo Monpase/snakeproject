@@ -60,6 +60,12 @@
                   Margin="14,62,32,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center">
+            <ComboBox.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0" Color="#FFF0F0F0" />
+                    <GradientStop Offset="1" Color="#FFE5E5E5" />
+                </LinearGradientBrush>
+            </ComboBox.Background>
             <ComboBox.Effect>
                 <DropShadowEffect />
             </ComboBox.Effect>
@@ -83,14 +89,14 @@
                   Margin="10,62,42,46"
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  BorderBrush="#FFEE2D2D">
+                  BorderBrush="#FFAEA9A9">
             <ComboBox.Effect>
                 <DropShadowEffect />
             </ComboBox.Effect>
             <ComboBox.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                    <GradientStop Color="#FFC58989" />
-                    <GradientStop Offset="0.662" Color="#FFC74A4A" />
+                    <GradientStop Offset="0" Color="#FFF0F0F0" />
+                    <GradientStop Offset="1" Color="#FFE5E5E5" />
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
