@@ -64,20 +64,16 @@ namespace WPF_Snake
 
         
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
+        
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
           //  MessageBox.Show(rec.Name + rec.Result);
         }
 
-        private void comboBoxLevel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        
 
-        }
+       
 
         private void ButtonAuthors_Click(object sender, RoutedEventArgs e)
         {
