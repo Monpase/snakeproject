@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WPF_Snake
 {
@@ -58,6 +59,7 @@ namespace WPF_Snake
            sr.Level = comboBoxLevel.SelectedIndex+1;
            sr.MapType = listBoxMap.SelectedItem.ToString();
            sr.OnClickPlay();
+           
         }
 
         
@@ -69,7 +71,7 @@ namespace WPF_Snake
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
-            //some actions
+          //  MessageBox.Show(rec.Name + rec.Result);
         }
 
 
