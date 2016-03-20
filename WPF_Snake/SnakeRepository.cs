@@ -1,7 +1,6 @@
 ﻿using Snake_Project;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -47,136 +46,141 @@ namespace WPF_Snake
         [DllImport("Kernel32")]
         public static extern void FreeConsole();
 
-        
         public void OnClickPlay()
         {
-        
-                AllocConsole();
-                int lvl = _level;
-                Console.SetBufferSize(80, 25);
-                Walls walls = new Walls(0, 0);
-                Rooms rooms = new Rooms(0, 0);
-                Tunnel tunnel = new Tunnel(0, 0);
-                string map = _mapType;
 
 
-                if (map == "Box")
+            AllocConsole();
+            int lvl = _level;
+            Console.SetBufferSize(80, 25);
+            Walls walls = new Walls(0, 0);
+            Rooms rooms = new Rooms(0, 0);
+            Tunnel tunnel = new Tunnel(0, 0);
+            string map = _mapType;
+
+
+            if (map == "Box")
+            {
+                walls = new Walls(80, 25);
+                walls.Draw();
+            }
+            else if (map == "Rooms")
+            {
+
+                walls = new Walls(80, 25);
+                rooms = new Rooms(40, 25);
+                rooms.Draw();
+                walls.Draw();
+            }
+            else if (map == "Tunnel")
+            {
+                tunnel = new Tunnel(80, 25);
+                walls = new Walls(80, 25);
+                walls.Draw();
+                tunnel.Draw();
+
+            }
+
+
+            // Отрисовка точек	
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+
+            Snake_Project.Point p = new Snake_Project.Point(4, 5, 'o');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
+
+
+            FoodCreator foodCreator = new FoodCreator(79, 25, '*');
+
+            Snake_Project.Point food = foodCreator.CreateFood();
+
+            if (map == "Rooms")
+            {
+                if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
                 {
-                    walls = new Walls(80, 25);
-                    walls.Draw();
-                }
-                else if (map == "Rooms")
-                {
 
-                    walls = new Walls(80, 25);
-                    rooms = new Rooms(40, 25);
-                    rooms.Draw();
-                    walls.Draw();
-                }
-                else if (map == "Tunnel")
-                {
-                    tunnel = new Tunnel(80, 25);
-                    walls = new Walls(80, 25);
-                    walls.Draw();
-                    tunnel.Draw();
-
-                }
-
-
-                // Отрисовка точек	
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-
-                Snake_Project.Point p = new Snake_Project.Point(4, 5, 'o');
-                Snake snake = new Snake(p, 4, Direction.RIGHT);
-                snake.Draw();
-
-
-                FoodCreator foodCreator = new FoodCreator(79, 25, '*');
-
-                Snake_Project.Point food = foodCreator.CreateFood();
-
-                if (map == "Rooms")
-                {
-                    if ((food.x > 7 && food.x < 70) && (food.y > 5 && food.y < 19)) // промежутки стен карты
-                    {
-
-                        food.x = food.x + 1;
-                        food.y = food.y + 6;
-                        food.Draw();
-                    }
-
-                    else
-                    {
-                        food.Draw();
-                    }
+                    food.x = food.x + 1;
+                    food.y = food.y + 6;
+                    food.Draw();
                 }
 
-                if (map == "Tunnel")
-                {
-                    if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 15)) // промежутки стен карты
-                    {
-                        food.y = food.y + 2;
-                        food.Draw();
-                    }
-                    else
-                    {
-                        food.Draw();
-                    }
-                }
-                if (map == "Box")
+                else
                 {
                     food.Draw();
                 }
-                int score = 0;
+            }
 
-                while (true)
+            if (map == "Tunnel")
+            {
+                if ((food.x > 9 && food.x < 69) && (food.y == 9 || food.y == 15)) // промежутки стен карты
                 {
-                    if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake))
-                    {
-                        break;
-                    }
-                    if (snake.Eat(food))
-                    {
-
-                        food = foodCreator.CreateFood();
-                        food.Draw();
-                        score++;
-
-                    }
-
-                    else
-                    {
-                        snake.Move();
-                    }
-
-                    Thread.Sleep(600 / lvl);
-                    if (Console.KeyAvailable)
-                    {
-                        ConsoleKeyInfo key = Console.ReadKey();
-                        snake.HandleKey(key.Key);
-                    }
+                    food.y = food.y + 2;
+                    food.Draw();
                 }
-                Console.Clear();
-                WriteGameOver();
-                Console.SetCursorPosition(41, 14);
-                Console.WriteLine(score * 10);
+                else
+                {
+                    food.Draw();
+                }
+            }
+            if (map == "Box")
+            {
+                food.Draw();
+            }
+            int score = 0;
 
-                Console.SetCursorPosition(30, 16);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Enter your name:");
-                Console.SetCursorPosition(30, 17);
-                rec.Result = score;
-                rec.Name = Console.ReadLine();
-                FreeConsole();
-        
+            while (true)
+            {
+                if (walls.IsHit(snake) || rooms.IsHit(snake) || snake.IsHitTail() || tunnel.IsHit(snake))
+                {
+                    break;
+                }
+                if (snake.Eat(food))
+                {
+
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                    score++;
+
+                }
+
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(500 / lvl);
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    if (key.Key.ToString() == "UpArrow")
+                    {
+
+                    }
+                    snake.HandleKey(key.Key);
+                }
+            }
+            Console.Clear();
+            WriteGameOver();
+            Console.SetCursorPosition(38, 13);
+            Console.WriteLine(score * 10);
+
+            Console.SetCursorPosition(30, 15);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Enter your name:");
+            Console.SetCursorPosition(30, 16);
+            rec.Result = score;
+            rec.Name = Console.ReadLine();
+            //Console.Clear();
+            FreeConsole();
+
 
 
         }
         static void WriteGameOver()
         {
 
-            int xOffset = 25;
-            int yOffset = 8;
+            int xOffset = 22;
+            int yOffset = 7;
             Console.SetCursorPosition(xOffset, yOffset++);
             Console.ForegroundColor = ConsoleColor.Red;
             WriteText("==================================", xOffset, yOffset++);
