@@ -10,6 +10,10 @@ namespace WPF_Snake
     class Record
     {
         [Required]
+        [KeyAttribute]
+        public int ID { get; set; }
+
+        [Required]
         [MaxLength(20)]
         public string Name { get; set; }
 

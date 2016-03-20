@@ -13,8 +13,7 @@ namespace WPF_Snake
     class SnakeRepository
     {
 
-        Record rec = new Record();
-
+        
         private int _level;
 
         public int Level
@@ -167,8 +166,16 @@ namespace WPF_Snake
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Enter your name:");
             Console.SetCursorPosition(30, 16);
-            rec.Result = score;
-            rec.Name = Console.ReadLine();
+            
+            int locResult = score;
+            string locName = Console.ReadLine();
+
+            using (var dbRecord = new Context())
+            {
+                var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
+                dbRecord.Records.Add(newRecord);
+                dbRecord.SaveChanges();
+            }
             //Console.Clear();
             FreeConsole();
 
