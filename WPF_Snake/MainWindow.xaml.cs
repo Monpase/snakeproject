@@ -75,6 +75,11 @@ namespace WPF_Snake
 
        
 
+        private void ButtonAuthors_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("хай");
+        }
+
 
 
     }
