@@ -9,7 +9,13 @@ namespace WPF_Snake
 {
     class Context : DbContext
     {
-        DbSet<Record> Records { get; set; }
+        public DbSet<Record> Records { get; set; }
+
+        public Context()
+            : base("RecordsDB")
+        {
+
+        }
 
     }
 }

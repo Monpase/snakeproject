@@ -85,6 +85,10 @@
     <Compile Include="GameClasses\Walls.cs" />
     <Compile Include="DBrecords\Record.cs" />
     <Compile Include="DBrecords\Context.cs" />
+    <Compile Include="Migrations\201603201801212_current.cs" />
+    <Compile Include="Migrations\201603201801212_current.Designer.cs">
+      <DependentUpon>201603201801212_current.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SnakeRepository.cs" />
     <Page Include="MainWindow.xaml">
@@ -119,6 +123,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201603201801212_current.resx">
+      <DependentUpon>201603201801212_current.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
