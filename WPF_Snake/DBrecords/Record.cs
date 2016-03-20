@@ -17,14 +17,14 @@ namespace WPF_Snake
         public int Result { get; set; }
 
         public int Rank { get; set; }
-        public virtual Record(string name, int result, int rank)
-        {
-            this.Result = result;
-            this.Name = name;
-            this.Rank = rank;
-        }
+        //public virtual Record(string name, int result, int rank)
+        //{
+        //    this.Result = result;
+        //    this.Name = name;
+        //    this.Rank = rank;
+        //}
 
-        public override Record()
+        public Record()
         {
             // TODO: Complete member initialization
         }
