@@ -172,12 +172,12 @@ namespace WPF_Snake
             var dbRecord = new Context();
             dbRecord.Database.CreateIfNotExists();
 
-            using (var dbRecord = new Context())
-            {
-                var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
-                dbRecord.Records.Add(newRecord);
-                dbRecord.SaveChanges();
-            }
+         //   using (var dbRecord = new Context())
+           // {
+             //   var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
+               // dbRecord.Records.Add(newRecord);
+                //dbRecord.SaveChanges();
+            //}
             FreeConsole();
 
 
