@@ -73,7 +73,7 @@
         <TextBlock Grid.Row="2"
                    Width="194"
                    Height="52"
-                   Margin="14,14,8,79"
+                   Margin="23,14,17,79"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontFamily="Showcard Gothic"
@@ -81,6 +81,31 @@
                    TextWrapping="Wrap"><Run Text="choose level" />
             <LineBreak /><Run />
         </TextBlock>
+        <Button x:Name="ButtonAuthors"
+                Grid.Row="2"
+                Grid.Column="1"
+                Width="117"
+                Height="53"
+                Margin="22,68,26,24"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Click="ButtonAuthors_Click"
+                Content="about us"
+                FontFamily="Showcard Gothic"
+                FontSize="20"
+                Foreground="Black"
+                RenderTransformOrigin="-0.161,0.387">
+            <Button.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Offset="1" Color="Gray" />
+                    <GradientStop Color="#FFD4D4D4" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Effect>
+                <DropShadowEffect />
+            </Button.Effect>
+        </Button>
+
         <ComboBox Name="ComboBoxMap"
                   Grid.Row="2"
                   Grid.Column="2"
@@ -137,43 +162,6 @@
 
         </Button>
 
-        <Button x:Name="ButtonAuthors"
-                Grid.Row="4"
-                Grid.Column="1"
-                Width="117"
-                Height="53"
-                Margin="25,10,0,0"
-                HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Click="ButtonAuthors_Click"
-                Content="about us"
-                FontFamily="Showcard Gothic"
-                FontSize="20">
-            <Button.Effect>
-                <DropShadowEffect />
-            </Button.Effect>
-        </Button>
-        <Button Name="Post" 
-                Grid.Row="1"
-                Grid.Column="2"
-                Width="40"
-                Height="40"
-                Margin="0,10,10,0"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Top"
-                Click="Post_Click"
-                Content="VK"
-                FontFamily="Showcard Gothic"
-                FontSize="20" BorderBrush="#FF2094D6" Foreground="Black">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
-                    <GradientStop Color="#FFEBEBEB" Offset="0.5"/>
-                    <GradientStop Color="#FFDDDDDD" Offset="0.5"/>
-                    <GradientStop Color="#FF1E5ADA" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
         <Button x:Name="ButtonPlay"
                 Grid.Row="4"
                 Grid.Column="2"
