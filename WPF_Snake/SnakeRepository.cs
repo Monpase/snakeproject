@@ -1,6 +1,7 @@
 ﻿using Snake_Project;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -169,15 +170,15 @@ namespace WPF_Snake
             
             int locResult = score;
             string locName = Console.ReadLine();
-            var dbRecord = new Context();
-            dbRecord.Database.CreateIfNotExists();
+            //var context = new Context();
+            
 
-            using (var dbRecord = new Context())
-            {
-                var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
-                dbRecord.Records.Add(newRecord);
-                dbRecord.SaveChanges();
-            }
+            //using (context)
+            //{
+            //    var newRecord = new Record { Name = locName, Result = locResult, Rank = 1, ID = 4 };
+            //   context.Records.Add(newRecord);
+            //   context.SaveChanges();
+            //}
             FreeConsole();
 
 

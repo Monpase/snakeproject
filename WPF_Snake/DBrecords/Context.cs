@@ -12,7 +12,7 @@ namespace WPF_Snake
         public DbSet<Record> Records { get; set; }
 
         public Context()
-            : base("RecordsDB")
+            : base()
         {
 
         }
