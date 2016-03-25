@@ -55,7 +55,7 @@ namespace WPF_Snake
            
            if (comboBoxLevel.SelectedIndex <0 || ComboBoxMap.SelectedItem == null)
            {
-               MessageBox.Show("Set the level and the map!", "Error");
+               MessageBox.Show("Set the level and the map!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                return;
            }
            sr.Level = comboBoxLevel.SelectedIndex+1;
@@ -64,9 +64,6 @@ namespace WPF_Snake
            
         }
 
-        
-
-        
 
         private void ButtonScores_Click(object sender, RoutedEventArgs e)
         {
@@ -74,9 +71,6 @@ namespace WPF_Snake
             h.Show();
         }
 
-
-        
-       
 
         private void ButtonAuthors_Click(object sender, RoutedEventArgs e)
         {

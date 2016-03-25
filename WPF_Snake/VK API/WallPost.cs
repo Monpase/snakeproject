@@ -17,7 +17,7 @@ namespace WPF_Snake.VK_API
 
         WebBrowser wb = new WebBrowser();
         LogInVK ww;
-        public string Header { get { return "Share"; } }
+        
         private ICommand _post;
         WebBrowser webbrowser = new WebBrowser();
         public ICommand Post
